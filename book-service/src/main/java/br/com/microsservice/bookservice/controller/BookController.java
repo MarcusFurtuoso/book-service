@@ -1,7 +1,5 @@
 package br.com.microsservice.bookservice.controller;
 
-import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -32,7 +30,7 @@ public class BookController {
     @ResponseStatus(HttpStatus.OK)
     public Book findyBook(@PathVariable ("id") Long id, @PathVariable("currency") String currency) {
 
-        var book = repository.getReferenceById(id);
+        var book = repository.getById(id);
         if(book == null) throw new RuntimeException("Book not found!");
 
         var cambio = proxy.getCambio(book.getPrice(), "USD", currency);
