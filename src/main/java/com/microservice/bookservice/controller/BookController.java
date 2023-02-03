@@ -3,7 +3,6 @@ package com.microservice.bookservice.controller;
 import com.microservice.bookservice.model.Book;
 import com.microservice.bookservice.proxy.CambioProxy;
 import com.microservice.bookservice.repository.BookRepository;
-import com.microservice.bookservice.response.Cambio;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.Date;
-import java.util.HashMap;
 
 @Tag(name = "Book endpoint")
 @RestController
